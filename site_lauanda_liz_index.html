@@ -1,0 +1,222 @@
+<!--
+Arquivo: index.html
+Descrição: Landing page única para Lauanda Liz - Psicóloga
+Instruções rápidas:
+1) Salve este arquivo como `index.html`.
+2) Crie uma pasta `images/` e coloque a foto da Lauanda com o nome `lauanda.jpg` (ou ajuste o caminho abaixo).
+3) Se quiser separar CSS/JS em arquivos, basta copiar o conteúdo das tags <style> e <script> para `style.css` e `script.js` e referenciá-los.
+4) Para publicar no GitHub Pages: crie um repositório, envie `index.html` e a pasta `images/` e ative o GitHub Pages nas configurações.
+-->
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lauanda Liz — Psicóloga</title>
+  <meta name="description" content="Lauanda Liz - Psicóloga. Atendimento online, jovens e adultos. Agende sua sessão via WhatsApp ou Instagram." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --text:#f5f5f5;
+      --muted:#bdbdbd;
+      --pink:#ff3ca6;
+      --card:#121213;
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 6px 18px rgba(0,0,0,0.6);
+      --radius:16px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg),#0b0b0b 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:60px;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* Container */
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 8px;background:transparent;position:sticky;top:0;z-index:40}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--pink),#ff78b8);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111}
+    .title{font-size:18px;font-weight:700}
+    .subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-size:14px}
+    nav a:hover{background:var(--glass);color:var(--text)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:22px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+
+    .intro{padding:26px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:var(--shadow)}
+    .kicker{display:inline-block;background:linear-gradient(90deg,var(--pink),#ff78b8);padding:6px 10px;border-radius:20px;font-weight:700;color:#111;font-size:13px}
+    h1{margin:14px 0 6px;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:600;background:var(--card);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.02)}
+    .btn.wa{background:linear-gradient(90deg,#25D366,#1ebe5a);color:#07120a}
+    .btn.insta{background:linear-gradient(90deg,var(--pink),#ff78b8);color:#111}
+
+    /* Photo card */
+    .photo-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b0b0b, #0d0d0d);}
+    .photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Sections */
+    section{margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* Temas list */
+    .topics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+    @media (max-width:520px){.topics{grid-template-columns:1fr}}
+    .topic{padding:8px 10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02);font-size:14px}
+
+    /* Contact */
+    .contact-grid{display:flex;gap:12px;align-items:center}
+    .muted{color:var(--muted)}
+
+    footer{margin-top:40px;padding:18px 8px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small helpers */
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600}
+    .shadow-sm{box-shadow:0 4px 14px rgba(0,0,0,0.5)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">LL</div>
+        <div>
+          <div class="title">Lauanda Liz</div>
+          <div class="subtitle">Psicóloga • CRP 14/11513</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#top">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#temas">Temas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="intro card">
+          <span class="kicker">Atendimento online</span>
+          <h1>Cuidar da mente é um ato de coragem.</h1>
+          <p class="lead">Sou Lauanda Liz, psicóloga dedicada a acompanhar jovens e adultos em processos de autoconhecimento, enfrentamento de crises e reorganização emocional. Trabalho com um espaço acolhedor, livre de julgamentos, buscando caminhos práticos e humanos para o seu bem-estar.</p>
+
+          <div class="cta">
+            <a class="btn wa" href="https://wa.me/5567996797846" target="_blank" rel="noopener noreferrer">➡️ Agendar via WhatsApp</a>
+            <a class="btn insta" href="https://www.instagram.com/lizpsico7?igsh=MWQwMjJ6ajNlMzUxbQ==" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted)">
+            <div><strong>Horários:</strong> Segunda a sábado</div>
+            <div style="margin-top:6px">Sessões online • Atendimento para jovens e adultos</div>
+          </div>
+        </div>
+
+        <aside class="photo-card" style="height:420px;">
+          <!-- Substitua images/lauanda.jpg pela foto real -->
+          <img src="images/lauanda.jpg" alt="Lauanda Liz - Psicóloga" />
+        </aside>
+      </section>
+
+      <section id="sobre">
+        <div class="card">
+          <h2>Sobre a Lauanda</h2>
+          <p style="color:var(--muted);margin-top:6px">Olá, eu sou a Lauanda. Acolho pessoas que procuram entender suas emoções, reencontrar equilíbrio e ressignificar experiências difíceis. Acredito que cada história merece ser ouvida com atenção e que o processo terapêutico é um espaço seguro para explorar medos, perdas e desejos. Meu compromisso é caminhar junto, com escuta empática e técnicas baseadas em evidências, para que você reconquiste autonomia sobre sua vida emocional.</p>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="pill">CRP 14/11513</span>
+            <span class="pill">Atendimento online</span>
+            <span class="pill">Jovens & Adultos</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="temas">
+        <h2 style="margin-top:18px">Temas de afinidade</h2>
+        <div class="card" style="margin-top:10px">
+          <div class="topics">
+            <div class="topic">Ansiedade</div>
+            <div class="topic">Depressão</div>
+            <div class="topic">Estresse e burnout</div>
+            <div class="topic">Dificuldades nos relacionamentos</div>
+            <div class="topic">Baixa autoestima</div>
+            <div class="topic">Questões de identidade</div>
+            <div class="topic">Oscilações emocionais</div>
+            <div class="topic">Transtornos de humor</div>
+            <div class="topic">Dificuldades escolares (infância/adolec.)</div>
+            <div class="topic">TDAH e autismo</div>
+            <div class="topic">Transtornos alimentares</div>
+            <div class="topic">Luto e perdas</div>
+            <div class="topic">Sexualidade e identidade de gênero</div>
+            <div class="topic">Uso problemático de substâncias</div>
+            <div class="topic">Traumas e TEPT</div>
+            <div class="topic">Dependência tecnológica</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato">
+        <h2 style="margin-top:18px">Agende sua sessão</h2>
+        <div class="card" style="margin-top:10px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <a class="btn wa" href="https://wa.me/5567996797846" target="_blank" rel="noopener noreferrer">➡️ (67) 99679-7846 — WhatsApp</a>
+            <a class="btn insta" href="https://www.instagram.com/lizpsico7?igsh=MWQwMjJ6ajNlMzUxbQ==" target="_blank" rel="noopener noreferrer">📸 @lizpsico7</a>
+          </div>
+
+          <div class="muted">Segunda a sábado • Sessões on-line</div>
+
+          <div style="font-size:14px;color:var(--muted);"><!--Se desejar, posso incluir um pequeno formulário de pré-agendamento que envia uma mensagem para o WhatsApp — me fala se quer isso também.--></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div><strong>Lauanda Liz</strong> - Psicóloga • CRP 14/11513 • </div>
+      <div style="margin-top:8px"> • Feito com cuidado • <!--Cores: preto & rosa--></div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Scroll suave para os links do nav
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const href = a.getAttribute('href');
+        if(href && href.startsWith('#')){
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+
+    // substitua o fallback da imagem por um placeholder suave se não carregar
+    const img = document.querySelector('.photo-card img');
+    img.addEventListener('error', () => {
+      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800"><rect width="100%" height="100%" fill="%230f0f10"/><text x="50%" y="50%" fill="%23ff3ca6" font-size="28" font-family="Arial" text-anchor="middle" dy="8">Foto da Lauanda aqui</text></svg>'
+    });
+  </script>
+</body>
+</html>
